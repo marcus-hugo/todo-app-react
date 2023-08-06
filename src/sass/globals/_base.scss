@@ -1,0 +1,31 @@
+body {
+  font-family: Roboto, sans-serif;
+}
+
+main {
+  max-width: 475px;
+  margin: 0 auto;
+  min-height: calc(100vh - 247.328px);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  padding: 1rem;
+}
+
+button {
+  background: var(--btn-bg);
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+  color: var(--btn-hover);
+}

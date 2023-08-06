@@ -1,0 +1,48 @@
+:root {
+  --clr-bg-dark: #171823;
+  --clr-bg-light: #e4e4e7;
+  --clr-display-bg-dark: #25273d;
+  --clr-display-bg-light: #f5f5f5;
+  --clr-li-text-light: #c8cbe7;
+  --clr-li-text-dark: #3e5184;
+  --clr-light: #f5f5f5;
+  --clr-grey-400: #a3a3a3;
+  --clr-grey-600: #5a6069;
+  --clr-grey-700: #3f3f46;
+  --clr-grey-800: #1f2937;
+  --clr-accent: #7f6599;
+  --clr-accent-light: #add8e6;
+  --clr-accent-dark: rebeccapurple;
+  --btn-hover-light: #c8cbe7;
+  --btn-hover-dark: #3e5184;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --background: var(--clr-bg-dark);
+    --header-bg: var(--clr-bg-dark);
+    --header-title: var(--clr-bg-light);
+    --display-bg: var(--clr-display-bg-dark);
+    --li-text: var(--clr-li-text-light);
+    --footer-bg: var(--clr-grey-800);
+    --btn-bg: var(--clr-display-bg-dark);
+    --btn-hover: var(--btn-hover-light);
+    --dimmed: var(--clr-grey-400);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+    --background: var(--clr-bg-light);
+    --header-bg: var(--clr-grey-800);
+    --header-title: var(--clr-bg-light);
+    --display-bg: var(--clr-display-bg-light);
+    --li-text: var(--clr-li-text-dark);
+    --footer-bg: var(--clr-grey-800);
+    --btn-bg: var(--clr-display-bg-light);
+    --btn-hover: var(--btn-hover-dark);
+    --dimmed: var(--clr-grey-400);
+  }
+}

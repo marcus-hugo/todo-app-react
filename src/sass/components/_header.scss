@@ -1,0 +1,25 @@
+.header {
+  height: 200px;
+  background: var(--header-bg);
+  // background: url("bg-mobile-dark.jpg");
+  // background-repeat: no-repeat;
+}
+
+.header__inner-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__title {
+  font-size: 1.5625rem;
+  letter-spacing: 0.5ch;
+  padding: 0 1.5rem;
+  margin: 2.5rem 0;
+  background: transparent;
+  color: var(--header-title);
+}
+
+.toggle-switch-wrapper {
+  padding: 0 1.5rem;
+}

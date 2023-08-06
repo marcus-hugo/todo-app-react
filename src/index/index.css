@@ -1,0 +1,15 @@
+:root {
+  --clr-bg-dark: #171823;
+  --clr-light: #fff;
+  --clr-grey-600: #5a6069;
+  --clr-accent: #7f6599;
+  --clr-accent-light: #add8e6;
+  --clr-accent-dark: rebeccapurple;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --background: var(--clr-bg-dark);
+  }
+}

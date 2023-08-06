@@ -1,0 +1,13 @@
+.form {
+  display: flex;
+  padding: 0 1.5rem;
+  margin: 1rem 0;
+}
+
+.form__input {
+  flex-grow: 1;
+  height: 3rem;
+  background: var(--display-bg);
+  border: none;
+  padding: 0 1rem;
+}
