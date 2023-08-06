@@ -21,7 +21,7 @@
   :root {
     color-scheme: dark;
     --background: var(--clr-bg-dark);
-    --header-bg: var(--clr-bg-dark);
+    --header-bg: var(--clr-grey-800);
     --header-title: var(--clr-bg-light);
     --display-bg: var(--clr-display-bg-dark);
     --li-text: var(--clr-li-text-light);
@@ -45,6 +45,19 @@
     --dimmed: var(--clr-grey-400);
   }
 }
+[data-theme=light] {
+  color-scheme: light;
+  --background: var(--clr-bg-light);
+  --header-bg: var(--clr-grey-800);
+  --header-title: var(--clr-bg-light);
+  --display-bg: var(--clr-display-bg-light);
+  --li-text: var(--clr-li-text-dark);
+  --footer-bg: var(--clr-grey-800);
+  --btn-bg: var(--clr-display-bg-light);
+  --btn-hover: var(--btn-hover-dark);
+  --dimmed: var(--clr-grey-400);
+}
+
 *,
 *::before,
 *::after {
@@ -78,7 +91,7 @@ body {
 main {
   max-width: 475px;
   margin: 0 auto;
-  min-height: calc(100vh - 247.328px);
+  min-height: calc(100vh - 263.328px);
 }
 
 h1,
@@ -101,6 +114,10 @@ button {
 button:hover {
   cursor: pointer;
   color: var(--btn-hover);
+}
+
+.app-container {
+  background: var(--background);
 }
 
 .header {
@@ -158,7 +175,7 @@ button:hover {
 .toggle-switch__slider {
   position: absolute;
   border-radius: 1.25em;
-  background: var(--clr-grey-3);
+  background: var(--clr-grey-600);
   top: 0;
   left: 0;
   right: 0;

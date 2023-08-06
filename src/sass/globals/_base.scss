@@ -5,7 +5,7 @@ body {
 main {
   max-width: 475px;
   margin: 0 auto;
-  min-height: calc(100vh - 247.328px);
+  min-height: calc(100vh - 263.328px);
 }
 
 h1,
@@ -28,4 +28,8 @@ button {
 button:hover {
   cursor: pointer;
   color: var(--btn-hover);
+}
+
+.app-container {
+  background: var(--background);
 }
