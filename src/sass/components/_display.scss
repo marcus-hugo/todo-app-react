@@ -12,6 +12,10 @@
   padding: 0 0 0 1rem;
 }
 
+.display__li-input[type="checkbox"]:checked + .display__li-text {
+  text-decoration-line: line-through;
+}
+
 .display__li-input-wrapper {
   display: flex;
   flex-grow: 1;
