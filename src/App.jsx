@@ -1,4 +1,4 @@
-import { React, useState } from "react"
+import { React, useEffect, useState } from "react"
 import useLocalStorage from "use-local-storage"
 
 function App() {
@@ -17,12 +17,17 @@ function App() {
   // Todos
   const [todos, setTodos] = useLocalStorage("todos", [])
   const [item, setItem] = useState("")
+  const [isLeft, setIsLeft] = useState(todos.length)
+
+  useEffect(() => {
+    setIsLeft(todos.length)
+  }, [todos])
 
   function handleSubmit(e) {
     e.preventDefault()
     console.log("new todo added")
     let newTodos = [...todos]
-    newTodos.push({ todo: item, id: Date.now(), checked: false })
+    newTodos.push({ todo: item, id: Date.now() })
     setTodos(newTodos)
     setItem("")
   }
@@ -33,7 +38,7 @@ function App() {
       <main>
         <div>
           <Form item={item} setItem={setItem} handleSubmit={handleSubmit} />
-          <Display todos={todos} setTodos={setTodos} />
+          <Display todos={todos} setTodos={setTodos} isLeft={isLeft} setIsLeft={setIsLeft} />
           <Filter />
           <div className="hint">
             <p>Drag and drop to reorder list</p>
@@ -78,18 +83,47 @@ function Form({ handleSubmit, item, setItem }) {
   )
 }
 
+// Display Componenet
+function Display({ todos, setTodos, isLeft, setIsLeft }) {
+  return (
+    <div className="display">
+      <ul className="display__ul">
+        {todos.map(todo => (
+          <ListItem todo={todo} todos={todos} id={todo.id} key={todo.id} setTodos={setTodos} isLeft={isLeft} setIsLeft={setIsLeft} />
+        ))}
+      </ul>
+      <StatusBar isLeft={isLeft} setIsLeft={setIsLeft} />
+    </div>
+  )
+}
+
 // List item Component
-function ListItem({ todo, setTodos }) {
+function ListItem({ todo, todos, setTodos, isLeft, setIsLeft }) {
   // Delete Item
   function deleteItem() {
     console.log("note deleted")
     setTodos(prev => prev.filter(t => t.id != todo.id))
   }
 
+  const [isChecked, setIsChecked] = useState(false)
+  function handleChange() {
+    setIsChecked(!isChecked)
+  }
+
+  // does not mutate state, updates with new value
+  useEffect(() => {
+    let newLength = isLeft
+    if (isChecked === true) {
+      setIsLeft(newLength - 1)
+    } else if (isChecked === false) {
+      setIsLeft(newLength + 1)
+    }
+  }, [isChecked])
+
   return (
     <li className="display__li">
       <div className="display__li-input-wrapper">
-        <input className="display__li-input" type="checkbox" />
+        <input className="display__li-input" type="checkbox" checked={isChecked} onChange={handleChange} />
         <p className="display__li-text">{todo.todo}</p>
       </div>
 
@@ -100,25 +134,11 @@ function ListItem({ todo, setTodos }) {
   )
 }
 
-// Display Componenet
-function Display({ todos, setTodos }) {
-  return (
-    <div className="display">
-      <ul className="display__ul">
-        {todos.map(todo => (
-          <ListItem todo={todo} id={todo.id} key={todo.id} setTodos={setTodos} />
-        ))}
-      </ul>
-      <StatusBar />
-    </div>
-  )
-}
-
 // Status Bar
-function StatusBar() {
+function StatusBar({ isLeft }) {
   return (
     <div className="status-bar">
-      <p className="status-bar__text">5 items left</p>
+      <p className="status-bar__text">{isLeft} items left</p>
       <button className="status-bar__btn">Clear Completed</button>
     </div>
   )
