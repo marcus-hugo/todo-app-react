@@ -20,14 +20,22 @@ function App() {
   const [isLeft, setIsLeft] = useState(todos.length)
 
   useEffect(() => {
-    setIsLeft(todos.length)
+    let newLength = todos.length
+
+    for (let i = 0; i < todos.length; i++) {
+      if (todos[i].isCompleted === true) {
+        newLength--
+      }
+    }
+
+    setIsLeft(newLength)
   }, [todos])
 
   function handleSubmit(e) {
     e.preventDefault()
     console.log("new todo added")
     let newTodos = [...todos]
-    newTodos.push({ todo: item, id: Date.now() })
+    newTodos.push({ todo: item, id: Date.now(), isCompleted: false })
     setTodos(newTodos)
     setItem("")
   }
@@ -38,7 +46,7 @@ function App() {
       <main>
         <div>
           <Form item={item} setItem={setItem} handleSubmit={handleSubmit} />
-          <Display todos={todos} setTodos={setTodos} isLeft={isLeft} setIsLeft={setIsLeft} />
+          <Display todos={todos} setTodos={setTodos} isLeft={isLeft} />
           <Filter />
           <div className="hint">
             <p>Drag and drop to reorder list</p>
@@ -84,46 +92,50 @@ function Form({ handleSubmit, item, setItem }) {
 }
 
 // Display Componenet
-function Display({ todos, setTodos, isLeft, setIsLeft }) {
+function Display({ todos, setTodos, isLeft }) {
   return (
     <div className="display">
       <ul className="display__ul">
         {todos.map(todo => (
-          <ListItem todo={todo} todos={todos} id={todo.id} key={todo.id} setTodos={setTodos} isLeft={isLeft} setIsLeft={setIsLeft} />
+          <ListItem todo={todo} todos={todos} id={todo.id} key={todo.id} setTodos={setTodos} isLeft={isLeft} />
         ))}
       </ul>
-      <StatusBar isLeft={isLeft} setIsLeft={setIsLeft} />
+      <StatusBar isLeft={isLeft} />
     </div>
   )
 }
 
 // List item Component
-function ListItem({ todo, todos, setTodos, isLeft, setIsLeft }) {
+function ListItem({ todo, todos, setTodos }) {
   // Delete Item
   function deleteItem() {
     console.log("note deleted")
     setTodos(prev => prev.filter(t => t.id != todo.id))
   }
 
-  const [isChecked, setIsChecked] = useState(false)
-  function handleChange() {
-    setIsChecked(!isChecked)
-  }
+  function handleChange(e) {
+    // get currently clicked item
 
-  // does not mutate state, updates with new value
-  useEffect(() => {
-    let newLength = isLeft
-    if (isChecked === true) {
-      setIsLeft(newLength - 1)
-    } else if (isChecked === false) {
-      setIsLeft(newLength + 1)
-    }
-  }, [isChecked])
+    const currentClicked = todos.filter(t => t.id == todo.id)
+    // update the todos array
+    const updatedTodos = todos.map(t => {
+      if (t.id === currentClicked[0].id) {
+        return {
+          ...t,
+          isCompleted: e.target.checked
+        }
+      } else {
+        return t
+      }
+    })
+
+    setTodos(updatedTodos)
+  }
 
   return (
     <li className="display__li">
       <div className="display__li-input-wrapper">
-        <input className="display__li-input" type="checkbox" checked={isChecked} onChange={handleChange} />
+        <input className="display__li-input" type="checkbox" onChange={handleChange} checked={todo.isCompleted} />
         <p className="display__li-text">{todo.todo}</p>
       </div>
 
