@@ -100,7 +100,7 @@ function Display({ todos, setTodos, isLeft }) {
           <ListItem todo={todo} todos={todos} id={todo.id} key={todo.id} setTodos={setTodos} isLeft={isLeft} />
         ))}
       </ul>
-      <StatusBar isLeft={isLeft} />
+      <StatusBar isLeft={isLeft} setTodos={setTodos} />
     </div>
   )
 }
@@ -147,11 +147,23 @@ function ListItem({ todo, todos, setTodos }) {
 }
 
 // Status Bar
-function StatusBar({ isLeft }) {
+function StatusBar({ isLeft, setTodos }) {
+  function handleClick() {
+    console.log("I got clicked!")
+
+    setTodos(prev =>
+      prev.filter(t => {
+        return t.isCompleted === false
+      })
+    )
+  }
+
   return (
     <div className="status-bar">
       <p className="status-bar__text">{isLeft} items left</p>
-      <button className="status-bar__btn">Clear Completed</button>
+      <button onClick={handleClick} className="status-bar__btn">
+        Clear Completed
+      </button>
     </div>
   )
 }
