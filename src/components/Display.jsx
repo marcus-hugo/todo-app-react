@@ -1,9 +1,9 @@
 import ListItem from "./ListItem"
 import StatusBar from "./StatusBar"
 
-function Display({ todos, setTodos, isLeft, filteredTodos, setFilteredTodos, tab }) {
+function Display({ todos, setTodos, isLeft, tab }) {
+  let filteredTodos
   filteredTodos = todos.filter(t => {
-    console.log(filteredTodos)
     if (tab === "all") {
       return t
     } else if (tab === "active") {

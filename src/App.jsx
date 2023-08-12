@@ -24,8 +24,7 @@ function App() {
   const [todos, setTodos] = useLocalStorage("todos", [])
   const [item, setItem] = useState("")
   const [isLeft, setIsLeft] = useState(todos.length)
-  const [filteredTodos, setFilteredTodos] = useLocalStorage("filtered", [])
-  const [tab, setTab] = useState("")
+  const [tab, setTab] = useState("all")
 
   useEffect(() => {
     let newLength = todos.length
@@ -54,7 +53,7 @@ function App() {
       <main>
         <div>
           <Form item={item} setItem={setItem} handleSubmit={handleSubmit} />
-          <Display todos={todos} setTodos={setTodos} isLeft={isLeft} filteredTodos={filteredTodos} setFilteredTodos={setFilteredTodos} tab={tab} setTab={setTab} />
+          <Display todos={todos} setTodos={setTodos} isLeft={isLeft} tab={tab} setTab={setTab} />
           <Filter tab={tab} setTab={setTab} />
           <Hint />
         </div>
