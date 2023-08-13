@@ -28,7 +28,7 @@ function ListItem({ todo, todos, setTodos }) {
     <li className="display__li">
       <div className="display__li-input-wrapper">
         <label htmlFor={"toggle-" + todo.todo}></label>
-        <input className="display__li-input" type="checkbox" onChange={handleChange} checked={todo.isCompleted} id={"toggle-" + todo.todo} aria-lablel={"Toggles " + todo.todo + " todo"} />
+        <input className="display__li-input" type="checkbox" onChange={handleChange} checked={todo.isCompleted} id={"toggle-" + todo.todo} aria-label={"Toggles " + todo.todo + " todo"} />
         <p className="display__li-text">{todo.todo}</p>
       </div>
 
