@@ -42,7 +42,7 @@
     --footer-bg: var(--clr-grey-800);
     --btn-bg: var(--clr-display-bg-light);
     --btn-hover: var(--btn-hover-dark);
-    --dimmed: var(--clr-grey-400);
+    --dimmed: var(--clr-grey-600);
   }
 }
 [data-theme=light] {
@@ -55,7 +55,7 @@
   --footer-bg: var(--clr-grey-800);
   --btn-bg: var(--clr-display-bg-light);
   --btn-hover: var(--btn-hover-dark);
-  --dimmed: var(--clr-grey-400);
+  --dimmed: var(--clr-grey-600);
 }
 
 *,
