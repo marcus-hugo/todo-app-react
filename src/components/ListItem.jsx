@@ -27,7 +27,8 @@ function ListItem({ todo, todos, setTodos }) {
   return (
     <li className="display__li">
       <div className="display__li-input-wrapper">
-        <input className="display__li-input" type="checkbox" onChange={handleChange} checked={todo.isCompleted} />
+        <label htmlFor="toggle-todo"></label>
+        <input className="display__li-input" type="checkbox" onChange={handleChange} checked={todo.isCompleted} id="toggle-todo" />
         <p className="display__li-text">{todo.todo}</p>
       </div>
 
