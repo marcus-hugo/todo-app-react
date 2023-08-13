@@ -55,7 +55,6 @@ function App() {
           <Form item={item} setItem={setItem} handleSubmit={handleSubmit} />
           <Display todos={todos} setTodos={setTodos} isLeft={isLeft} tab={tab} setTab={setTab} />
           <Filter tab={tab} setTab={setTab} />
-          <Hint />
         </div>
       </main>
       <Footer />
