@@ -1,4 +1,3 @@
-// List item Component
 function ListItem({ todo, todos, setTodos }) {
   // Delete Item
   function deleteItem() {

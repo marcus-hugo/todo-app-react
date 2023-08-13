@@ -4,7 +4,6 @@ import Header from "./components/Header"
 import Form from "./components/Form"
 import Display from "./components/Display"
 import Filter from "./components/Filter"
-import Hint from "./components/Hint"
 import Footer from "./components/Footer"
 
 function App() {
