@@ -1,11 +1,10 @@
+const currentYear = new Date().getFullYear()
+
 function Footer() {
   return (
     <footer className="footer">
       <small>
-        <p>Challenged by Frontend Mentor</p>
-      </small>
-      <small>
-        <p>Coded by Marcus Hugo</p>
+        <p>{currentYear} Marcus Hugo. Made with 🤔 and ☕️ .</p>
       </small>
     </footer>
   )
