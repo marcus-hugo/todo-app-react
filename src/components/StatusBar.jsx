@@ -10,7 +10,7 @@ function StatusBar({ isLeft, setTodos }) {
   return (
     <div className="status-bar">
       <p className="status-bar__text">{isLeft} items left</p>
-      <button onClick={handleClick} className="status-bar__btn">
+      <button onClick={handleClick} className="status-bar__btn" aria-label="Clear completed todos">
         Clear Completed
       </button>
     </div>

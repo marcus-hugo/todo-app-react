@@ -28,11 +28,11 @@ function ListItem({ todo, todos, setTodos }) {
     <li className="display__li">
       <div className="display__li-input-wrapper">
         <label htmlFor={"toggle-" + todo.todo}></label>
-        <input className="display__li-input" type="checkbox" onChange={handleChange} checked={todo.isCompleted} id={"toggle-" + todo.todo} aria-label={"Toggles " + todo.todo + " todo"} />
+        <input className="display__li-input" type="checkbox" onChange={handleChange} checked={todo.isCompleted} id={"toggle-" + todo.todo} aria-label={"Toggles " + todo.todo + " todo as completed"} />
         <p className="display__li-text">{todo.todo}</p>
       </div>
 
-      <button onClick={deleteItem} className="display__li-btn-delete">
+      <button onClick={deleteItem} className="display__li-btn-delete" aria-label={"Delete " + todo.todo + " todo"}>
         X
       </button>
     </li>
