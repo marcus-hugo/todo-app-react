@@ -221,6 +221,10 @@ input[type=checkbox]:focus-visible + .toggle-switch__slider {
   padding: 0 1rem;
 }
 
+.from__btn {
+  color: inherit;
+}
+
 .display__ul {
   list-style: none;
   padding: 0 1.5rem;
@@ -246,6 +250,7 @@ input[type=checkbox]:focus-visible + .toggle-switch__slider {
 
 .display__li-btn-delete {
   padding: 1rem;
+  color: inherit;
 }
 
 .strikethrough {
