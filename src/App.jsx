@@ -41,7 +41,7 @@ function App() {
     e.preventDefault()
     console.log("new todo added")
     let newTodos = [...todos]
-    newTodos.push({ todo: item, id: Date.now(), isCompleted: false })
+    newTodos.push({ todo: item, id: todos.length, isCompleted: false })
     setTodos(newTodos)
     setItem("")
   }
@@ -54,6 +54,9 @@ function App() {
           <Form item={item} setItem={setItem} handleSubmit={handleSubmit} />
           <Display todos={todos} setTodos={setTodos} isLeft={isLeft} tab={tab} setTab={setTab} />
           <Filter tab={tab} setTab={setTab} />
+          <div>
+            <p className="hint">Drag and drop to reorder List</p>
+          </div>
         </div>
       </main>
       <Footer />
