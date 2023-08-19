@@ -1,5 +1,6 @@
 import { React, useEffect, useState } from "react"
 import useLocalStorage from "use-local-storage"
+import useMediaQuery from "./hooks/useMediaQuery"
 import Header from "./components/Header"
 import Form from "./components/Form"
 import Display from "./components/Display"
@@ -11,6 +12,7 @@ function App() {
   const mql = window.matchMedia("(prefers-color-scheme: dark)")
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches // true
   const [theme, setTheme] = useLocalStorage("theme", defaultDark ? "dark" : "light") // true = 'dark'
+  const isMobile = useMediaQuery("(max-width: 767px)")
 
   function switchTheme() {
     const newTheme = theme === "light" ? "dark" : "light"
@@ -54,9 +56,11 @@ function App() {
           <Form item={item} setItem={setItem} handleSubmit={handleSubmit} />
           <Display todos={todos} setTodos={setTodos} isLeft={isLeft} tab={tab} setTab={setTab} />
           <Filter tab={tab} setTab={setTab} />
-          <div>
-            <p className="hint">Drag and drop to reorder List</p>
-          </div>
+          {!isMobile && (
+            <div>
+              <p className="hint">Drag and drop to reorder List</p>
+            </div>
+          )}
         </div>
       </main>
       <Footer />
