@@ -12,6 +12,8 @@
 
 ## UI/UX Features
 
+Toggle light and dark mode on or off. Add todos that are saved in local storage. Full CRUD operations. Todos can be checked with a visual strike through. View todos by all, active, or completed. Drag and drop to reorder todos!
+
 ## Solutions & Problems Solved
 
 - Delete current todo. Seems like magic!
@@ -71,8 +73,18 @@
   <input className="display__li-input" type="checkbox" onChange={handleChange} checked={todo.isCompleted} />
   ```
 
+- Drag and Drop Feature
+
+  I wanted a solution that did not require a library. I found this YouTube video on very simple solution using `index` from the `map()` array method and React `useRef`.
+
+  Youtube: [https://www.youtube.com/watch?v=CYKDtVZr_Jw]
+
+  Github: [https://github.com/thebikashweb/react-drag-drop-without-library/blob/master/src/pages/ListSort.tsx]
+
 ## References
 
 - React Docs
 
 ## Accessiblity
+
+- aria-labels to announce which item is being added, checked, and deleted.
