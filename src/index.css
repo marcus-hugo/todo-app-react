@@ -91,7 +91,7 @@ body {
 main {
   max-width: 475px;
   margin: 0 auto;
-  min-height: calc(100vh - 263.328px);
+  min-height: calc(100vh - 175.5px);
 }
 
 h1,
@@ -121,7 +121,6 @@ button:hover {
 }
 
 .header {
-  height: 200px;
   background: var(--header-bg);
 }
 
@@ -233,10 +232,14 @@ input[type=checkbox]:focus-visible + .toggle-switch__slider {
 
 .display__li {
   display: flex;
+  align-items: center;
   background: var(--display-bg);
   color: var(--li-text);
   font-size: 1rem;
   padding: 0 0 0 1rem;
+}
+.display__li:hover {
+  cursor: move;
 }
 
 .display__li-input[type=checkbox]:checked + .display__li-text {
@@ -245,6 +248,7 @@ input[type=checkbox]:focus-visible + .toggle-switch__slider {
 
 .display__li-input-wrapper {
   display: flex;
+  align-items: center;
   flex-grow: 1;
 }
 

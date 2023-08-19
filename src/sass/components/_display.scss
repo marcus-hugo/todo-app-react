@@ -6,10 +6,15 @@
 
 .display__li {
   display: flex;
+  align-items: center;
   background: var(--display-bg);
   color: var(--li-text);
   font-size: 1rem;
   padding: 0 0 0 1rem;
+
+  &:hover {
+    cursor: move;
+  }
 }
 
 .display__li-input[type="checkbox"]:checked + .display__li-text {
@@ -18,6 +23,7 @@
 
 .display__li-input-wrapper {
   display: flex;
+  align-items: center;
   flex-grow: 1;
 }
 
