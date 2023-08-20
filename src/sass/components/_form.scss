@@ -1,7 +1,8 @@
 .form {
   display: flex;
-  padding: 0 1.5rem;
-  margin: 1rem 0;
+  // padding: 0 1.5rem;
+  margin: 1rem;
+  background: var(--display-bg);
 }
 
 .form__input {

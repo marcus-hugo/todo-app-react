@@ -54,7 +54,9 @@ function App() {
       <main>
         <div>
           <Form item={item} setItem={setItem} handleSubmit={handleSubmit} />
-          <Display todos={todos} setTodos={setTodos} isLeft={isLeft} tab={tab} setTab={setTab} />
+          <div className="backdrop">
+            <Display todos={todos} setTodos={setTodos} isLeft={isLeft} tab={tab} setTab={setTab} />
+          </div>
           <Filter tab={tab} setTab={setTab} />
           {!isMobile && (
             <div>

@@ -117,6 +117,11 @@ button:hover {
   color: var(--btn-hover);
 }
 
+input,
+button {
+  border-radius: 2px;
+}
+
 input[type=text]:focus-visible,
 input[type=checkbox]:focus-visible,
 button:focus-visible {
@@ -126,6 +131,12 @@ button:focus-visible {
 
 .app-container {
   background: var(--background);
+}
+
+.backdrop {
+  background: var(--display-bg);
+  border-radius: 5px;
+  margin: 0 1rem;
 }
 
 .header {
@@ -216,8 +227,8 @@ input[type=checkbox]:focus-visible + .toggle-switch__slider {
 
 .form {
   display: flex;
-  padding: 0 1.5rem;
-  margin: 1rem 0;
+  margin: 1rem;
+  background: var(--display-bg);
 }
 
 .form__input {
@@ -246,7 +257,6 @@ input[type=checkbox]:focus-visible + .toggle-switch__slider {
   background: var(--display-bg);
   color: var(--li-text);
   font-size: 1rem;
-  padding: 0 0 0 1rem;
 }
 .display__li:hover {
   cursor: move;
@@ -278,7 +288,6 @@ input[type=checkbox]:focus-visible + .toggle-switch__slider {
 }
 
 .display__li-btn-delete {
-  padding: 0.5rem 1rem;
   color: inherit;
 }
 .display__li-btn-delete:hover .close-x {
@@ -313,8 +322,9 @@ input[type=checkbox]:focus-visible + .toggle-switch__slider {
   justify-content: center;
   gap: 1rem;
   background: var(--display-bg);
-  margin: 1rem 1.5rem;
+  margin: 1rem;
   height: 48px;
+  border-radius: 5px;
 }
 .filter__btn {
   color: var(--dimmed);
