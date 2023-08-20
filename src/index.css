@@ -117,6 +117,13 @@ button:hover {
   color: var(--btn-hover);
 }
 
+input[type=text]:focus-visible,
+input[type=checkbox]:focus-visible,
+button:focus-visible {
+  outline: dashed 3px #ff471a;
+  outline-offset: 5px;
+}
+
 .app-container {
   background: var(--background);
 }
@@ -219,6 +226,7 @@ input[type=checkbox]:focus-visible + .toggle-switch__slider {
   background: var(--display-bg);
   border: none;
   padding: 0 1rem;
+  margin-right: 13px;
 }
 
 .form__btn {
@@ -249,7 +257,14 @@ input[type=checkbox]:focus-visible + .toggle-switch__slider {
   -moz-appearance: none;
        appearance: none;
   margin: 0;
-  transform: translate(-18px, -5px);
+  transform: translate(-20px, -4px);
+  width: 1.15em;
+  height: 1.15em;
+  border-radius: 2px;
+}
+
+.display__li-input[type=checkbox]:focus-visible {
+  outline-offset: 8px;
 }
 
 .display__li-input[type=checkbox]:checked + .display__li-text {
@@ -263,7 +278,7 @@ input[type=checkbox]:focus-visible + .toggle-switch__slider {
 }
 
 .display__li-btn-delete {
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   color: inherit;
 }
 .display__li-btn-delete:hover .close-x {
@@ -285,6 +300,7 @@ input[type=checkbox]:focus-visible + .toggle-switch__slider {
   margin: 0 1.5rem;
   background: var(--display-bg);
   color: var(--dimmed);
+  margin-top: 10px;
 }
 .status-bar__btn {
   color: var(--dimmed);

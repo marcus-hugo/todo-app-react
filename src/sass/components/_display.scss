@@ -21,7 +21,15 @@
   -webkit-appearance: none;
   appearance: none;
   margin: 0;
-  transform: translate(-18px, -5px);
+  transform: translate(-20px, -4px);
+  width: 1.15em;
+  height: 1.15em;
+  border-radius: 2px;
+}
+
+.display__li-input[type="checkbox"]:focus-visible {
+  // outline: 2px solid red;
+  outline-offset: 8px;
 }
 
 .display__li-input[type="checkbox"]:checked + .display__li-text {
@@ -35,7 +43,7 @@
 }
 
 .display__li-btn-delete {
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   color: inherit;
 
   &:hover .close-x {
@@ -58,6 +66,7 @@
   margin: 0 1.5rem;
   background: var(--display-bg);
   color: var(--dimmed);
+  margin-top: 10px;
 
   &__btn {
     color: var(--dimmed);
