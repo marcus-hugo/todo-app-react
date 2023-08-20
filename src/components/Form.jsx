@@ -1,4 +1,3 @@
-// Form Component
 function Form({ handleSubmit, item, setItem }) {
   return (
     <form onSubmit={handleSubmit} className="form" action="">

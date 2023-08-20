@@ -109,6 +109,7 @@ p {
 button {
   background: var(--btn-bg);
   border: none;
+  font-size: 1rem;
 }
 
 button:hover {
@@ -220,8 +221,9 @@ input[type=checkbox]:focus-visible + .toggle-switch__slider {
   padding: 0 1rem;
 }
 
-.from__btn {
-  color: inherit;
+.form__btn {
+  color: var(--dimmed);
+  padding: 0 1rem;
 }
 
 .display__ul {
@@ -242,6 +244,14 @@ input[type=checkbox]:focus-visible + .toggle-switch__slider {
   cursor: move;
 }
 
+.display__li-input[type=checkbox] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  margin: 0;
+  transform: translate(-18px, -5px);
+}
+
 .display__li-input[type=checkbox]:checked + .display__li-text {
   text-decoration-line: line-through;
 }
@@ -255,6 +265,13 @@ input[type=checkbox]:focus-visible + .toggle-switch__slider {
 .display__li-btn-delete {
   padding: 1rem;
   color: inherit;
+}
+.display__li-btn-delete:hover .close-x {
+  fill: var(--btn-hover);
+}
+
+.close-x {
+  fill: var(--dimmed);
 }
 
 .strikethrough {

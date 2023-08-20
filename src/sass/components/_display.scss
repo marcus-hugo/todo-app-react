@@ -17,6 +17,13 @@
   }
 }
 
+.display__li-input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+  transform: translate(-18px, -5px);
+}
+
 .display__li-input[type="checkbox"]:checked + .display__li-text {
   text-decoration-line: line-through;
 }
@@ -30,6 +37,14 @@
 .display__li-btn-delete {
   padding: 1rem;
   color: inherit;
+
+  &:hover .close-x {
+    fill: var(--btn-hover);
+  }
+}
+
+.close-x {
+  fill: var(--dimmed);
 }
 
 .strikethrough {
