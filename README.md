@@ -88,3 +88,4 @@ Toggle light and dark mode on or off. Add todos that are saved in local storage.
 ## Accessiblity
 
 - aria-labels to announce which item is being checked and deleted.
+- changed color gradient on checkboxes to meet WCAG AA Graphical and User Interface Components
