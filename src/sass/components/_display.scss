@@ -28,12 +28,11 @@
 }
 
 .display__li-input[type="checkbox"]:focus-visible {
-  // outline: 2px solid red;
   outline-offset: 8px;
 }
 
 .display__li-input[type="checkbox"]:checked + .display__li-text {
-  text-decoration-line: line-through;
+  text-decoration: line-through;
 }
 
 .display__li-input-wrapper {

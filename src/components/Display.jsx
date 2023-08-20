@@ -92,7 +92,7 @@ function Display({ todos, setTodos, isLeft, tab }) {
                 <input className="display__li-input" type="checkbox" onChange={e => handleCheck(e, todo)} checked={todo.isCompleted} id={"toggle-" + todo.todo} aria-label={"Toggles " + todo.todo + " todo as completed"} />
               </label>
 
-              <p className="display__li-text">{todo.todo}</p>
+              <p className={todo.isCompleted ? "display__li-text strikethrough" : "display__li-text"}>{todo.todo}</p>
             </div>
 
             <button onClick={e => deleteItem(todo)} className="display__li-btn-delete" aria-label={"Delete " + todo.todo + " todo"}>
