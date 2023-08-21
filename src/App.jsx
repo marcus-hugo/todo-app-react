@@ -41,7 +41,6 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    console.log("new todo added")
     let newTodos = [...todos]
     newTodos.push({ todo: item, id: todos.length, isCompleted: false })
     setTodos(newTodos)

@@ -21,8 +21,6 @@ function Display({ todos, setTodos, isLeft, tab }) {
   }
 
   function deleteItem(todo) {
-    console.log("note deleted")
-    console.log(todo)
     setTodos(prev => prev.filter(t => t.id != todo.id))
   }
 
@@ -41,7 +39,6 @@ function Display({ todos, setTodos, isLeft, tab }) {
   let dragOverItem = useRef()
 
   function handleSort() {
-    console.log("sorting...")
     let newItems = [...todos]
     const draggedItemContent = newItems.splice(dragItem.current, 1)[0]
     newItems.splice(dragOverItem.current, 0, draggedItemContent)

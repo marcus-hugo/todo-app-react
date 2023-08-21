@@ -1,13 +1,10 @@
 function ListItem({ todo, todos, setTodos }) {
-  // Delete Item
   function deleteItem() {
-    console.log("note deleted")
     setTodos(prev => prev.filter(t => t.id != todo.id))
   }
 
   function handleChange(e) {
     // get currently clicked item
-
     const currentClicked = todos.filter(t => t.id == todo.id)
     // update the todos array
     const updatedTodos = todos.map(t => {
